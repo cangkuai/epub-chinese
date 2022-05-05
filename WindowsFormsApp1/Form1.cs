@@ -38,13 +38,6 @@ namespace WindowsFormsApp1
             }
             }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            if (!System.IO.Directory.Exists(@".\reader"))
-            {
-                System.IO.Directory.CreateDirectory(@".\reader");//不存在就创建文件夹
-            }
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -75,7 +68,15 @@ namespace WindowsFormsApp1
                         textBox2.Text = textBox2.Text + "开始转换" + name + "\r\n";
                         string ftext = sr.ReadToEnd();
                         sr.Close();
-                        string strSimple = Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.SimplifiedChinese);
+                        string strSimple;
+                        if (radioButton2.Checked == true)
+                        {
+                            strSimple = Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.SimplifiedChinese);
+                        }
+                        else
+                        {
+                            strSimple= Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.TraditionalChinese);
+                        }
                         textBox2.Text = textBox2.Text + "转换" + name + "成功" + "\r\n";
                         textBox2.Text = textBox2.Text + "开始写入" + name + "\r\n";
                         StreamWriter sw = new StreamWriter(fullName);
@@ -97,7 +98,15 @@ namespace WindowsFormsApp1
                     textBox2.Text = textBox2.Text + "开始转换配置文件\r\n";
                     string ftext = sr.ReadToEnd();
                     sr.Close();
-                    string strSimple = Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.SimplifiedChinese);
+                    string strSimple;
+                    if (radioButton2.Checked == true)
+                    {
+                        strSimple = Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.SimplifiedChinese);
+                    }
+                    else
+                    {
+                        strSimple = Microsoft.VisualBasic.Strings.StrConv(ftext, Microsoft.VisualBasic.VbStrConv.TraditionalChinese);
+                    }
                     textBox2.Text = textBox2.Text + "转换配置文件成功" + "\r\n";
                     textBox2.Text = textBox2.Text + "开始写入配置文件\r\n";
                     StreamWriter sw = new StreamWriter(@".\reader\OEBPS\toc.ncx");

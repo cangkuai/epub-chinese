@@ -34,6 +34,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +52,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(121, 35);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -61,7 +63,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 12F);
             this.button1.Location = new System.Drawing.Point(379, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 27);
             this.button1.TabIndex = 2;
@@ -91,29 +93,54 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(397, 150);
+            this.button2.Location = new System.Drawing.Point(390, 258);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 44);
             this.button2.TabIndex = 5;
-            this.button2.Text = "繁体转简体";
+            this.button2.Text = "开始转换";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("宋体", 12F);
+            this.radioButton1.Location = new System.Drawing.Point(399, 200);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(105, 20);
+            this.radioButton1.TabIndex = 6;
+            this.radioButton1.Text = "简体转繁体";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Font = new System.Drawing.Font("宋体", 12F);
+            this.radioButton2.Location = new System.Drawing.Point(399, 150);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(105, 20);
+            this.radioButton2.TabIndex = 7;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "繁体转简体";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 360);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "epub简繁转化";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +154,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
